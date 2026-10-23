@@ -1,39 +1,56 @@
-# Chirpy Starter
+# Chloe’s Tech Notes
 
-[![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
-[![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+基于 [Chirpy Starter](https://github.com/cotes2020/chirpy-starter) 的综合技术博客。
 
-A minimal, ready-to-use template for creating a blog with the [**Chirpy**][chirpy] Jekyll theme. Get up and running in minutes with all critical files pre-configured.
+站点地址（部署成功后）：https://chloe-zh97.github.io
 
-## Why This Starter Exists
+## 写文章
 
-When installing Chirpy through [RubyGems.org][gem], Jekyll can only read a subset of theme files (`_data`, `_layouts`, `_includes`, `_sass`, `assets`) and limited `_config.yml` options from the gem. As a result, users cannot enjoy the full out-of-the-box experience that Chirpy offers.
+1. 在 `_drafts/algorithm-first-post.md` 写第一篇算法文章；草稿默认不会发布。
+2. 完成后移到 `_posts/YYYY-MM-DD-your-slug.md`，添加实际发布日期 `date`，包含正确时区偏移。
+3. 提交到 `main`，GitHub Actions 自动构建、检查内部链接并部署。
 
-To unlock all features, the following files must be present in your Jekyll site:
+也可以复制 `templates/post.md` 到 `_posts/` 开始新文章。文件名建议使用英文 slug。
 
-```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
+## 分类约定
+
+`categories` 是层级，最多建议两层；`tags` 是可跨方向复用的知识点。
+
+| 方向 | categories 示例 | tags 示例 |
+| --- | --- | --- |
+| 算法 | `[Algorithm, Binary Search]` | `[binary-search, invariants]` |
+| Agent | `[Agent, Tool Use]` | `[llm, tool-calling]` |
+| 分布式系统 | `[Distributed Systems, Consensus]` | `[raft, consistency]` |
+
+分类与标签页由已发布文章自动生成，无需提前创建空分类。首页按时间展示全部文章。
+
+## 本地预览
+
+需要 Ruby 3.4 和 Bundler：
+
+```sh
+bundle install
+bundle exec jekyll serve
+# 包含草稿
+bundle exec jekyll serve --drafts
+# 生产构建与内部链接检查
+bash tools/test.sh
 ```
 
-This starter bundles those files from the latest **Chirpy** release along with a [CD][CD] workflow, so you can start writing immediately.
+打开 http://127.0.0.1:4000 。生产部署不包含草稿。
 
-## Usage
+## GitHub Pages
 
-Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
+仓库必须命名为 `chloe-zh97.github.io`。在 Settings → Pages → Build and deployment → Source 选择 **GitHub Actions**。
+部署配置位于 `.github/workflows/pages-deploy.yml`。首次启用 Pages 后可从 Actions 手动运行 Build and Deploy。
 
-## Contributing
+`_config.yml` 已配置站点 URL、中文界面、作者和时区。`_tabs/about.md` 是关于页；`_data/contact.yml` 配置 GitHub 与 RSS。
 
-This repository is automatically updated with new releases from the theme repository. If you encounter any issues or want to contribute to its improvement, please visit the [theme repository][chirpy] to provide feedback.
+代码高亮、目录、搜索、归档、亮暗主题由 Chirpy 提供。公式使用 `math: true`，流程图使用 `mermaid: true`。
+图片可放在 `assets/img/posts/<slug>/`，正文用 `![说明](/assets/img/posts/<slug>/image.png)` 引用。
+
+主题升级通过 Gemfile 的版本范围管理；升级后应检查构建与页面。
 
 ## License
 
-This work is published under [MIT][mit] License.
-
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+保留上游 MIT 许可证，见 LICENSE。
