@@ -1,6 +1,6 @@
 ---
-title: "第一篇算法笔记：在这里填写标题"
-description: "用一两句话说明问题、核心思路和读者能获得什么。"
+title: "My First Algorithm Note: Add Your Title Here"
+description: "Summarize the problem, the key idea, and what readers will learn."
 categories: [Algorithm]
 tags: [algorithm]
 toc: true
@@ -8,34 +8,34 @@ math: true
 mermaid: false
 ---
 
-## 问题与约束
+## Problem and Constraints
 
-描述输入、输出和约束。补充一组可以手算的例子。
+Describe the inputs, outputs, and constraints. Include a small example that can be worked through by hand.
 
-## 直觉与思路
+## Intuition and Approach
 
-从最直接的方法出发，说明瓶颈，再解释关键观察。
+Start with a straightforward approach, identify the bottleneck, and explain the key observation.
 
-## 算法与正确性
+## Algorithm and Correctness
 
-描述步骤、循环不变量或递推关系，并解释算法为什么正确。
+Describe the steps, loop invariant, or recurrence. Explain why the algorithm produces the correct result.
 
-## 实现
+## Implementation
 
-在这里加入代码和必要注释。
+Add your code and any necessary comments here.
 
-## 复杂度
+## Complexity Analysis
 
-定义输入规模，分别分析时间复杂度和额外空间复杂度。
+Define the input size, then analyze time complexity and auxiliary space complexity.
 
-## 边界情况与测试
+## Edge Cases and Tests
 
-覆盖空输入、单元素、重复值、极端值和题目特有边界。
+Consider empty inputs, single elements, duplicates, extreme values, and problem-specific boundaries.
 
-## 总结与延伸
+## Takeaways and Extensions
 
-记录适用场景、易错点和相关问题。
+Discuss when this approach is useful, common pitfalls, and related problems.
 
-## 参考资料
+## References
 
-添加原题、文档或论文链接。
+Link to the original problem, documentation, or papers.

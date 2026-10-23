@@ -1,56 +1,65 @@
 # Chloe’s Tech Notes
 
-基于 [Chirpy Starter](https://github.com/cotes2020/chirpy-starter) 的综合技术博客。
+A technical blog built with [Chirpy Starter](https://github.com/cotes2020/chirpy-starter), Jekyll, and GitHub Pages.
 
-站点地址（部署成功后）：https://chloe-zh97.github.io
+**Website:** https://chloe-zh97.github.io
 
-## 写文章
+## Write a Post
 
-1. 在 `_drafts/algorithm-first-post.md` 写第一篇算法文章；草稿默认不会发布。
-2. 完成后移到 `_posts/YYYY-MM-DD-your-slug.md`，添加实际发布日期 `date`，包含正确时区偏移。
-3. 提交到 `main`，GitHub Actions 自动构建、检查内部链接并部署。
+1. Start your first algorithm article in `_drafts/algorithm-first-post.md`. Drafts are not included in the published website.
+2. When ready, move it to `_posts/YYYY-MM-DD-your-slug.md` and add the actual publication `date` with the correct timezone offset.
+3. Commit to `main`. GitHub Actions builds the site, checks internal links, and deploys it automatically.
 
-也可以复制 `templates/post.md` 到 `_posts/` 开始新文章。文件名建议使用英文 slug。
+For other articles, copy `templates/post.md` into `_posts/`. Use an English filename slug and update the example date before publishing.
 
-## 分类约定
+## Categories and Tags
 
-`categories` 是层级，最多建议两层；`tags` 是可跨方向复用的知识点。
+Categories form a hierarchy; one or two levels are usually enough. Tags describe specific concepts and can be shared across categories.
 
-| 方向 | categories 示例 | tags 示例 |
+| Topic | Example categories | Example tags |
 | --- | --- | --- |
-| 算法 | `[Algorithm, Binary Search]` | `[binary-search, invariants]` |
-| Agent | `[Agent, Tool Use]` | `[llm, tool-calling]` |
-| 分布式系统 | `[Distributed Systems, Consensus]` | `[raft, consistency]` |
+| Algorithms | `[Algorithm, Binary Search]` | `[binary-search, invariants]` |
+| Agents | `[Agent, Tool Use]` | `[llm, tool-calling]` |
+| Distributed systems | `[Distributed Systems, Consensus]` | `[raft, consistency]` |
 
-分类与标签页由已发布文章自动生成，无需提前创建空分类。首页按时间展示全部文章。
+Category and tag pages are generated from published posts. There is no need to create empty categories in advance. The home page lists all published posts chronologically.
 
-## 本地预览
+## Local Preview
 
-需要 Ruby 3.4 和 Bundler：
+Use Ruby 3.4 and Bundler:
 
 ```sh
 bundle install
 bundle exec jekyll serve
-# 包含草稿
+# Include drafts in the local preview
 bundle exec jekyll serve --drafts
-# 生产构建与内部链接检查
+# Build for production and check internal links
 bash tools/test.sh
 ```
 
-打开 http://127.0.0.1:4000 。生产部署不包含草稿。
+Open http://127.0.0.1:4000 . Production deployments do not include drafts.
 
 ## GitHub Pages
 
-仓库必须命名为 `chloe-zh97.github.io`。在 Settings → Pages → Build and deployment → Source 选择 **GitHub Actions**。
-部署配置位于 `.github/workflows/pages-deploy.yml`。首次启用 Pages 后可从 Actions 手动运行 Build and Deploy。
+This repository is named `chloe-zh97.github.io`. In **Settings → Pages → Build and deployment → Source**, select **GitHub Actions**.
 
-`_config.yml` 已配置站点 URL、中文界面、作者和时区。`_tabs/about.md` 是关于页；`_data/contact.yml` 配置 GitHub 与 RSS。
+The deployment workflow is `.github/workflows/pages-deploy.yml`. You can also run **Build and Deploy** manually from the Actions tab.
 
-代码高亮、目录、搜索、归档、亮暗主题由 Chirpy 提供。公式使用 `math: true`，流程图使用 `mermaid: true`。
-图片可放在 `assets/img/posts/<slug>/`，正文用 `![说明](/assets/img/posts/<slug>/image.png)` 引用。
+## Site Configuration
 
-主题升级通过 Gemfile 的版本范围管理；升级后应检查构建与页面。
+- `_config.yml`: site URL, English interface, author, description, and timezone.
+- `_tabs/about.md`: About page.
+- `_data/contact.yml`: GitHub and RSS links.
+- `_drafts/`: work in progress, excluded from the live website.
+- `_posts/`: published articles with dated filenames.
+- `templates/`: reusable writing templates, excluded from the website.
+
+Chirpy provides syntax highlighting, a table of contents, search, archives, and light/dark modes. Set `math: true` for equations or `mermaid: true` for diagrams in a post's front matter.
+
+Store post images in `assets/img/posts/<slug>/` and reference them with `![Description](/assets/img/posts/<slug>/image.png)`.
+
+Theme updates are managed through the version range in `Gemfile`. Check the build and rendered pages after an upgrade.
 
 ## License
 
-保留上游 MIT 许可证，见 LICENSE。
+The upstream MIT license is preserved in `LICENSE`.

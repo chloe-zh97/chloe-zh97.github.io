@@ -1,6 +1,6 @@
 ---
-title: "文章标题"
-description: "文章摘要"
+title: "Post Title"
+description: "A short summary of the post."
 date: 2026-10-22 12:00:00 -0700
 categories: [Algorithm]
 tags: [algorithm]
@@ -9,12 +9,12 @@ math: false
 mermaid: false
 ---
 
-## 背景与问题
+## Context and Problem
 
-## 核心思路
+## Key Ideas
 
-## 实现与验证
+## Implementation and Validation
 
-## 权衡与总结
+## Tradeoffs and Takeaways
 
-## 参考资料
+## References
